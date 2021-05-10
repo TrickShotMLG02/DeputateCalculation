@@ -28,6 +28,11 @@ class BootStrap {
         def user = new User(username: 'User', fullname: 'User', password: 'user', enabled: true).save(flush: true)
         UserRole.create(admin, roleAdmin, true)
         UserRole.create(user, roleUser, true)
+
+        /*
+            To manually create a new user with a specific role, use the create-method on the UserRole-table.
+            This will create a new entry in the specific table.
+         */
     }
 
 }
