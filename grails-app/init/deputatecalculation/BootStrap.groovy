@@ -22,6 +22,7 @@ class BootStrap {
     void addDefaultAuth() {
         def roleAdmin = new Role(authority: 'ROLE_ADMIN').save(flush: true)
         def roleUser = new Role(authority: 'ROLE_USER', description: 'User role').save(flush: true)
+        def roleDepartmentHead = new Role(authority: 'ROLE_DEPARTMENT_HEAD').save(flush: true)
 
         def admin = new User(username: 'Admin', fullname: 'Admin', password: 'admin', enabled: true).save(flush: true)
         def user = new User(username: 'User', fullname: 'User', password: 'user', enabled: true).save(flush: true)

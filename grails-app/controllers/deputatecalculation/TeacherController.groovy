@@ -11,11 +11,13 @@ class TeacherController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    @Secured(['ROLE_ADMIN', 'ROLE_DEPARTMENT_HEAD'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond teacherService.list(params), model:[teacherCount: teacherService.count()]
     }
 
+    @Secured(['ROLE_ADMIN', 'ROLE_DEPARTMENT_HEAD'])
     def show(Long id) {
         respond teacherService.get(id)
     }
