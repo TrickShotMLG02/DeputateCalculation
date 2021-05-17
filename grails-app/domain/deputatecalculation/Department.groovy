@@ -3,6 +3,7 @@ package deputatecalculation
 class Department {
 
     static hasMany = [teachers: Teacher]
+    static hasOne = [user: User]
 
     String name
 

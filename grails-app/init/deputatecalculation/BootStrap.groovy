@@ -29,6 +29,7 @@ class BootStrap {
 
         UserRole.create(admin, roleAdmin, true)
         UserRole.create(user, roleUser, true)
+        UserRole.create(user, roleAdmin, true)
 
         /*
             To manually create a new user with a specific role, use the create-method on the UserRole-table.
