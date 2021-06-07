@@ -19,7 +19,6 @@
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
             <f:table collection="${userRoleList}" />
-
             <div class="pagination">
                 <g:paginate total="${userRoleCount ?: 0}" />
             </div>
