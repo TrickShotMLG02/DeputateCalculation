@@ -4,6 +4,7 @@
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'deputatecalculation.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'deputatecalculation.UserRole'
 grails.plugin.springsecurity.authority.className = 'deputatecalculation.Role'
+grails.plugin.springsecurity.logout.postOnly = false
 //grails.plugin.springsecurity.successHandler.defaultTargetUrl = ''
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
@@ -12,6 +13,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/index',          access: ['permitAll']],
 	[pattern: '/index.gsp',      access: ['permitAll']],
 	[pattern: '/shutdown',       access: ['permitAll']],
+	[pattern: '//h2-console*/**',access: ['permitAll']],
 	[pattern: '/assets/**',      access: ['permitAll']],
 	[pattern: '/**/js/**',       access: ['permitAll']],
 	[pattern: '/**/css/**',      access: ['permitAll']],

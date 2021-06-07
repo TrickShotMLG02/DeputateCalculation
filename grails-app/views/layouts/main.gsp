@@ -25,18 +25,23 @@
     <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">
         <ul class="nav navbar-nav ml-auto">
             <g:pageProperty name="page.nav"/>
-            <sec:ifLoggedIn>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        <sec:loggedInUserInfo field='fullname'/>
-                    </a>
-                    <div class="dropdown-menu navbar-dark">
-                        <g:form controller="logout">
-                            <g:submitButton class="dropdown-item navbar-dark color-light" name="Submit" value="Logout" style="color:gray" />
-                        </g:form>
-                    </div>
-                </li>
-            </sec:ifLoggedIn>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardropAccount" data-toggle="dropdown">
+                    Account
+                </a>
+                <div class="dropdown-menu navbar-dark">
+                    <sec:ifLoggedIn>
+                        <a><sec:loggedInUserInfo field='fullname'/></a>
+                        <a>
+                            <a href="/logoff">Logout</a>
+                        </a>
+                    </sec:ifLoggedIn>
+
+                    <sec:ifNotLoggedIn>
+                        <g:link controller='login' action='auth'>Login</g:link>
+                    </sec:ifNotLoggedIn>
+                </div>
+            </li>
         </ul>
     </div>
 
