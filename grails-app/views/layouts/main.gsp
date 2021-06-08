@@ -32,9 +32,7 @@
                 <div class="dropdown-menu navbar-dark">
                     <sec:ifLoggedIn>
                         <a><sec:loggedInUserInfo field='fullname'/></a>
-                        <a>
-                            <a href="/logoff">Logout</a>
-                        </a>
+                        <a href="/logoff">Logout</a>
                     </sec:ifLoggedIn>
 
                     <sec:ifNotLoggedIn>
