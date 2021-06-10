@@ -5,29 +5,36 @@ import grails.gorm.transactions.Transactional
 class BootStrap {
 
     def init = { servletContext ->
-        addDefaults()
         addDefaultAuth()
     }
     def destroy = {
     }
 
     @Transactional
-    void addDefaults() {
-        def depScience = new Department(name: "Science").save(flush: true)
-        def depGeneralKnowledge = new Department(name: "General Knowledge").save(flush: true)
-        def teacher1 = new Teacher(surname: "Max", name: "Mustermann", shortname: "mm", email: "max.mustermann@schule.de", birthdate: new Date(), department: depScience).save(flush: true)
-    }
-
-    @Transactional
     void addDefaultAuth() {
+
+        //create roles
+        def roleTeacher = new Role(authority: 'ROLE_TEACHER').save()
         def roleAdmin = new Role(authority: 'ROLE_ADMIN').save()
         def roleUser = new Role(authority: 'ROLE_USER', description: 'User role').save()
 
-        //def admin = new User(username: 'admin', fullname: 'admin', password: springSecurityService.encodePassword('admin'), enabled: true)
-        def admin = new User(username: 'Admin', fullname: 'Admin', surname: 'min', prename: 'Ad', password: 'admin', enabled: true).save(flush: true)
-        def user = new User(username: 'User', fullname: 'User', surname: 'er', prename: 'Us', password: 'user', enabled: true).save(flush: true)
+        //create departments
+        def depScience = new Department(name: "Science").save(flush: true)
+        def depGeneralKnowledge = new Department(name: "General Knowledge").save(flush: true)
+
+        //create users (non-teachers)
+        def admin = new User(username: 'Admin', surname: 'min', prename: 'Ad', password: 'admin', enabled: true).save(flush: true)
+        def user = new User(username: 'User', surname: 'er', prename: 'Us', password: 'user', enabled: true).save(flush: true)
+
+        //create teachers
+        def hr = new Teacher(username: "nh", surname: "ham", prename: "nik", password: "hr", enabled: true, abbreviation: "hr", email: "hr@abc.de", birthdate: new Date(), department: depGeneralKnowledge).save(flush: true)
+
+        //assign roles to users (non-teachers)
         UserRole.create(admin, roleAdmin, true)
         UserRole.create(user, roleUser, true)
+
+        //assign roles to teachers
+        UserRole.create(hr, roleAdmin, true)
 
         /*
             To manually create a new user with a specific role, use the create-method on the UserRole-table.
