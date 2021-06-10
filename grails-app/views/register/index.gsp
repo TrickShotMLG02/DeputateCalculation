@@ -45,8 +45,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="username">Full Name</label>
-                        <input type="text" placeholder="Your full name" class="form-control" name="fullname" id="fullname" autocapitalize="none"/>
+                        <label for="username">Prename</label>
+                        <input type="text" placeholder="Your prename" class="form-control" name="prename" id="prename" autocapitalize="none"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Surname</label>
+                        <input type="text" placeholder="Your surname" class="form-control" name="surname" id="surname" autocapitalize="none"/>
                     </div>
 
                     <button id="submit" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>

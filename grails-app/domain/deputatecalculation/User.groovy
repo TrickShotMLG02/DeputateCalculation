@@ -13,7 +13,6 @@ class User implements Serializable {
 
     String username
     String password
-    String fullname
     String surname
     String prename
     boolean enabled = true
@@ -32,7 +31,6 @@ class User implements Serializable {
     static constraints = {
         password nullable: false, password: true
         username nullable: false, unique: true
-        fullname nullable: false
         surname nullable: false
         prename nullable: false
     }

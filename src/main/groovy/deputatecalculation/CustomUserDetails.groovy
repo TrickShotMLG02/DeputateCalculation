@@ -5,16 +5,18 @@ import org.springframework.security.core.GrantedAuthority
 
 class CustomUserDetails extends GrailsUser {
 
-    final String fullname
+    final String surname
+    final String prename
 
     CustomUserDetails(String username, String password, boolean enabled,
                       boolean accountNonExpired, boolean credentialsNonExpired,
                       boolean accountNonLocked,
                       Collection<GrantedAuthority> authorities,
-                      long id, String fullname) {
+                      long id, String surname, String prename) {
         super(username, password, enabled, accountNonExpired,
                 credentialsNonExpired, accountNonLocked, authorities, id)
 
-        this.fullname = fullname
+        this.surname = surname
+        this.prename = prename
     }
 }
