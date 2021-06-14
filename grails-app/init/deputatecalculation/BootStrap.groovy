@@ -39,9 +39,6 @@ class BootStrap {
         /*
             To manually create a new user with a specific role, use the create-method on the UserRole-table.
             This will create a new entry in the specific table.
-            s
-            s
-            s
          */
     }
 
