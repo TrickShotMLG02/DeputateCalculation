@@ -19,7 +19,7 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="userRole" />
+            <f:display bean="UserRole" />
             <g:form resource="${this.userRole}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.userRole}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

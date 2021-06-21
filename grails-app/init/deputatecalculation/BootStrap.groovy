@@ -14,9 +14,9 @@ class BootStrap {
     void addDefaultAuth() {
 
         //create roles
-        def roleTeacher = new Role(authority: 'ROLE_TEACHER').save()
-        def roleAdmin = new Role(authority: 'ROLE_ADMIN').save()
-        def roleUser = new Role(authority: 'ROLE_USER', description: 'User role').save()
+        def roleTeacher = new Role(authority: 'ROLE_TEACHER').save(flush: true)
+        def roleAdmin = new Role(authority: 'ROLE_ADMIN').save(flush: true)
+        def roleUser = new Role(authority: 'ROLE_USER', description: 'User role').save(flush: true)
 
         //create departments
         def depScience = new Department(name: "Science").save(flush: true)

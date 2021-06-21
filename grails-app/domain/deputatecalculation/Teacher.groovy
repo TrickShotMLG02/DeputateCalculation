@@ -1,6 +1,7 @@
 package deputatecalculation
 
-class Teacher extends User{
+class Teacher extends User {
+//class Teacher{
 
     static belongsTo = [department: Department]
 
@@ -19,7 +20,7 @@ class Teacher extends User{
 
     /**
      *
-     * @return Erzeugt die Ansicht der Lehrerliste mit ID, Vorname und Name
+     * @return Erzeugt die Ansicht der Lehrerliste Vorname und Name
      */
 
     String toString()

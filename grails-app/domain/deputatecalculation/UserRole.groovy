@@ -10,8 +10,6 @@ import grails.compiler.GrailsCompileStatic
 @ToString(cache=true, includeNames=true, includePackage=false)
 class UserRole implements Serializable {
 
-	private static final long serialVersionUID = 1
-
 	User user
 	Role role
 
@@ -81,7 +79,7 @@ class UserRole implements Serializable {
 	}
 
 	static mapping = {
-		id composite: ['user', 'role']
+		//id composite: ['user', 'role']
 		version: false
 	}
 }

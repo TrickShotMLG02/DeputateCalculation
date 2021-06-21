@@ -9,8 +9,6 @@ import grails.compiler.GrailsCompileStatic
 @ToString(includes='username', includeNames=true, includePackage=false)
 class User implements Serializable {
 
-    private static final long serialVersionUID = 1
-
     String username
     String password
     String surname

@@ -18,10 +18,10 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${userRoleList}" />
+            <f:table collection="${UserRoleList}" />
 
             <div class="pagination">
-                <g:paginate total="${userRoleCount ?: 0}" />
+                <g:paginate total="${UserRoleCount ?: 0}" />
             </div>
         </div>
     </body>
